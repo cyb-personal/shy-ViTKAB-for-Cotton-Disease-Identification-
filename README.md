@@ -1,512 +1,122 @@
-# TSSC-for-Pea-Disease-Identification
-
-
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-> 官方TensorFlow 和 Keras实现 | 论文处于投刊阶段，标题：《TSSC: A New Deep Learning Model for Accurate Pea Leaf Disease Identification》  
-
-
-> 提出时空尺度通道网络（TSSC）模型，基于TensorFlow框架实现五类豌豆常见病害与健康状态的高精度识别，助力农业病害智能化诊断。  
-
-
-## 1. 研究背景与模型定位  
-
-豌豆作为重要豆科作物，其叶片病害（如白粉病、潜叶虫、根腐病病等）易导致产量下降，传统人工检测存在效率低、依赖经验的问题。  
-
-本文提出**时空尺度通道网络（TSSC）**，通过创新的多维度特征融合与跨尺度建模机制，解决豌豆病害“多类别区分难、复杂背景干扰大”的问题。模型基于TensorFlow框架实现，包含4个核心卷积层与3种注意力机制，在五类豌豆病害数据集上实现优异的分类性能，为农业病害自动化诊断提供高效解决方案。  
-
-
-## 2. TSSC核心创新点  
-
-1. **三层注意力机制协同**：  
-   - **互补注意力（ complemented Squeeze-and-Excitation）**：从原始特征中提取主要的显著局部特征，从抑制的剩余通道信息中提取次级显著特征； 
-   - **K通道注意力**：考虑每个通道与左右邻域通道的关联性，动态优化特征表达；  
-   - **分散注意力（Split Attention）**：将通道分组并独立学习注意力，增强局部特征交互能力。  
-
-2. **高效特征提取结构**：  
-   采用4个精心设计的卷积层（核大小4×4、2×2、5×5、3×3），配合池化操作逐步压缩空间维度，在保留病害细节特征的同时提升计算效率。  
-
-3. **多类别适配优化**：  
-   针对五类病害的细粒度差异（如白粉病的白色霉层与霜霉病的黄色斑点），设计类别感知损失函数，降低相似病害的混淆度。  
-
-
-## 3. 实验数据集：五类豌豆病害数据集  
-=======
-> 官方TensorFlow实现 | 论文处于投刊阶段，标题：《TSSC: A New Deep Learning Model for Accurate Pea Leaf Disease Identification》  
-=======
-> 官方TensorFlow实现 | 论文处于投刊阶段，标题：《TSSC: A New Deep Learning Model for Accurate Pea Leaf Disease Identification》  
-
-
-> 提出时空尺度通道网络（TSSC）模型，基于TensorFlow框架实现五类豌豆常见病害与健康状态的高精度识别，助力农业病害智能化诊断。  
-
-
-=======
-> 官方TensorFlow实现 | 论文处于投刊阶段，标题：《TSSC: A New Deep Learning Model for Accurate Pea Leaf Disease Identification》  
-
-
-> 提出时空尺度通道网络（TSSC）模型，基于TensorFlow框架实现五类豌豆常见病害与健康状态的高精度识别，助力农业病害智能化诊断。  
-
-
->>>>>>> Stashed changes
-## 1. 研究背景与模型定位  
-
-豌豆作为重要豆科作物，其叶片病害（如白粉病、锈病、霜霉病等）易导致产量下降，传统人工检测存在效率低、依赖经验的问题。  
->>>>>>> Stashed changes
-
-本文提出**时空尺度通道网络（TSSC）**，通过创新的多维度特征融合与跨尺度建模机制，解决豌豆病害“多类别区分难、复杂背景干扰大”的问题。模型基于TensorFlow框架实现，包含4个核心卷积层与3种注意力机制，在五类豌豆病害数据集上实现优异的分类性能，为农业病害自动化诊断提供高效解决方案。  
-
-<<<<<<< Updated upstream
-> 提出时空尺度通道网络（TSSC）模型，基于TensorFlow框架实现五类豌豆常见病害与健康状态的高精度识别，助力农业病害智能化诊断。  
-
-本文提出**时空尺度通道网络（TSSC）**，通过创新的多维度特征融合与跨尺度建模机制，解决豌豆病害“多类别区分难、复杂背景干扰大”的问题。模型基于TensorFlow框架实现，包含4个核心卷积层与3种注意力机制，在五类豌豆病害数据集上实现优异的分类性能，为农业病害自动化诊断提供高效解决方案。  
-
-## 1. 研究背景与模型定位  
->>>>>>> Stashed changes
-
-<<<<<<< Updated upstream
-### 3.1 数据集概况  
-
-<<<<<<< Updated upstream
-=======
-
-=======
->>>>>>> Stashed changes
-## 2. TSSC核心创新点  
-
-1. **三层注意力机制协同**：  
-   - **SE注意力（Squeeze-and-Excitation）**：通过全局信息压缩与通道权重学习，强化关键病害特征通道；  
-   - **三邻域通道注意力**：考虑每个通道与左右邻域通道的关联性，动态优化特征表达；  
-   - **分裂注意力（Split Attention）**：将通道分组并独立学习注意力，增强局部特征交互能力。  
-
-2. **高效特征提取结构**：  
-   采用4个精心设计的卷积层（核大小4×4、2×2、5×5、3×3），配合池化操作逐步压缩空间维度，在保留病害细节特征的同时提升计算效率。  
-
-3. **多类别适配优化**：  
-   针对五类病害的细粒度差异（如白粉病的白色霉层与霜霉病的黄色斑点），设计类别感知损失函数，降低相似病害的混淆度。  
-
-
-## 3. 实验数据集：五类豌豆病害数据集  
-
-### 3.1 数据集概况  
-
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-本研究基于**五类豌豆病害识别数据集**，包含五种常见豌豆叶片状态，数据集存储于百度网盘，需自行下载后使用：  
-
-| 数据集名称 | 包含类别 | 图像总数 | 图像分辨率 | 数据分布（训练:验证:测试） |
-|------------|-------------------------|----------|------------|-----------------------|
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-| 五类豌豆数据集 | 白粉病（Powdery mildew）、根腐病（Root rot）、潜叶虫（Leaf miner）、褐斑病（Brown spot） + 健康叶片（Healthy） | 7,000+ | 统一resize至400×400（适配模型输入） | 3:1:1 |  
-
-=======
-本文提出**时空尺度通道网络（TSSC）**，通过创新的多维度特征融合与跨尺度建模机制，解决豌豆病害“多类别区分难、复杂背景干扰大”的问题。模型基于TensorFlow框架实现，包含4个核心卷积层与3种注意力机制，在五类豌豆病害数据集上实现优异的分类性能，为农业病害自动化诊断提供高效解决方案。  
-
-
-## 2. TSSC核心创新点  
-
-1. **三层注意力机制协同**：  
-   - **SE注意力（Squeeze-and-Excitation）**：通过全局信息压缩与通道权重学习，强化关键病害特征通道；  
-   - **三邻域通道注意力**：考虑每个通道与左右邻域通道的关联性，动态优化特征表达；  
-   - **分裂注意力（Split Attention）**：将通道分组并独立学习注意力，增强局部特征交互能力。  
-
-2. **高效特征提取结构**：  
-   采用4个精心设计的卷积层（核大小4×4、2×2、5×5、3×3），配合池化操作逐步压缩空间维度，在保留病害细节特征的同时提升计算效率。  
-
-3. **多类别适配优化**：  
-   针对五类病害的细粒度差异（如白粉病的白色霉层与霜霉病的黄色斑点），设计类别感知损失函数，降低相似病害的混淆度。  
-=======
-| 五类豌豆数据集 | 白粉病（Powdery mildew）、根腐病（Root rot）、潜叶虫（Leaf miner）、褐斑病（Brown spot） + 健康叶片（Healthy） | 12,000+ | 统一resize至400×400（适配模型输入） | 7:1:2（通过代码自动划分） |  
-=======
-| 五类豌豆数据集 | 白粉病（Powdery mildew）、根腐病（Root rot）、潜叶虫（Leaf miner）、褐斑病（Brown spot） + 健康叶片（Healthy） | 12,000+ | 统一resize至400×400（适配模型输入） | 7:1:2（通过代码自动划分） |  
-
-
-### 3.2 数据集获取与结构  
->>>>>>> Stashed changes
-
-1. **下载链接**：  
-   百度网盘链接：https://pan.baidu.com/s/1pAOw9JjZ3qtCVLDNJupn9Q 
-   提取码: x3ab 
-
-<<<<<<< Updated upstream
-### 3.2 数据集获取与结构  
->>>>>>> Stashed changes
-
-1. **下载链接**：  
-   百度网盘链接：https://pan.baidu.com/s/1pAOw9JjZ3qtCVLDNJupn9Q 
-   提取码: x3ab 
-
-<<<<<<< Updated upstream
-## 3. 实验数据集：五类豌豆病害数据集  
-
-### 3.1 数据集概况  
-
-本研究基于**五类豌豆病害识别数据集**，包含五种常见豌豆叶片状态，数据集存储于百度网盘，需自行下载后使用：  
-
-| 数据集名称 | 包含类别 | 图像总数 | 图像分辨率 | 数据分布（训练:验证:测试） |
-|------------|-------------------------|----------|------------|-----------------------|
-| 五类豌豆数据集 | 白粉病（Powdery mildew）、根腐病（Root rot）、潜叶虫（Leaf miner）、褐斑病（Brown spot） + 健康叶片（Healthy） | 12,000+ | 统一resize至400×400（适配模型输入） | 7:1:2（通过代码自动划分） |  
->>>>>>> Stashed changes
-
-### 3.2 数据集获取与结构  
-
-<<<<<<< Updated upstream
-1. **下载链接**：  
-   百度网盘链接：https://pan.baidu.com/s/18FxZMhVcK-5hRwAhoJS8mQ  
-   提取码: bq9g  
-
-2. **文件夹组织**（下载后解压至项目根目录，结构如下）：  
-```  
-pea_disease_dataset/  
-├── powdery_mildew/       # 豌豆白粉病叶片图像  
-├── root_rot/             # 豌豆根腐病叶片图像  
-├── leaf_miner/           # 豌豆潜叶虫危害叶片图像  
-├── brown_spot/           # 豌豆褐斑病叶片图像  
-└── healthy/              # 健康豌豆叶片图像  
-```  
-
-=======
-### 3.2 数据集获取与结构  
-
-1. **下载链接**：  
-   百度网盘链接：https://pan.baidu.com/s/1pAOw9JjZ3qtCVLDNJupn9Q 
-   提取码: x3ab 
-
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-2. **文件夹组织**（下载后解压至项目根目录，结构如下）：  
-```  
-pea_disease_dataset/
-├── 白粉病/       # 豌豆白粉病叶片图像
-├── 潜叶虫/       # 豌豆潜叶虫病叶片图像
-├── 褐斑病/       # 豌豆褐斑病叶片图像
-├── 根腐病/       # 豌豆根腐病叶片图像
-└── 健康叶片/     # 健康豌豆叶片图像
-```  
-
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-
-## 4. 实验环境配置  
-
-### 4.1 依赖安装  
-
-推荐使用Anaconda创建虚拟环境，确保依赖版本匹配（TensorFlow框架核心依赖）：  
-
-```bash  
+ViTKAB-for-Cotton-Leaf-Disease-Identification
+官方 PyTorch 实现 | 论文处于投刊阶段，标题：《ViTKAB: An Efficient Deep Learning Network for Cotton Leaf Disease Identification》提出 ViTKAB 网络模型，基于 PyTorch 框架实现四类棉花常见病害与健康状态的高精度识别，兼顾推理效率与特征捕捉能力，助力棉花病害智能化诊断与防控。
+1. 研究背景与模型定位
+棉花作为全球重要的经济作物，其叶片病害（如褐斑病、黄姜病、枯萎病等）易导致光合效率下降、纤维品质退化，传统人工检测依赖经验判断，存在效率低、误判率高、规模化应用难的问题。本文提出ViTKAB（Vision Transformer-Kolmogorov-Arnold Networks-BiFormer） 模型，通过三大核心模块协同优化：1）改进 Vision Transformer（ViT）提升推理速度；2）引入 Kolmogorov-Arnold Networks（KAN）增强非线性特征表征；3）融合 BiFormer 稀疏动态注意力提升鲁棒性。模型基于 PyTorch 2.4.1 框架实现，在四类棉花病害数据集上实现 “高效推理 + 高精度识别” 的双重目标，为棉花病害自动化诊断提供技术支撑。
+2. ViTKAB 核心创新点
+2.1 改进 Vision Transformer（ViT）：提升推理效率
+针对原始 ViT 计算复杂度高、推理慢的问题，通过两点优化降低计算成本：
+简化编码器结构：减少 Transformer 编码器层数（从 12 层精简至 8 层），同时保留关键特征传递路径，在精度损失 < 1% 的前提下，推理速度提升 40%；
+注意力计算优化：采用 “局部窗口注意力 + 全局稀疏注意力” 混合机制，替代全尺寸注意力，降低 Token 交互的计算量，适配移动端或边缘设备部署。
+2.2 Kolmogorov-Arnold 非线性表征机制：强化复杂特征捕捉
+引入 KAN 模块替代传统全连接层，利用其 “任意连续函数逼近能力”：
+针对棉花病害的细粒度差异（如枯萎病的褐色焦斑与黄姜病的黄色萎蔫区），通过 KAN 的分段非线性映射，强化病害纹理、颜色、形状的细微特征区分；
+结合棉花叶片的自然形态（如叶脉分布、叶片边缘），设计自适应激活函数，减少背景（如土壤、杂草）对病害特征的干扰。
+2.3 BiFormer 稀疏动态注意力：提高模型鲁棒性
+融合 BiFormer 的 “双路径注意力” 机制，增强模型对复杂场景的适应能力：
+动态通道选择：根据输入图像的病害区域占比，动态激活关键注意力通道，避免无效背景特征的冗余计算；
+稀疏 Token 过滤：通过注意力权重阈值筛选，过滤低贡献度的图像 Token（如无病害的叶片边缘），聚焦病害核心区域，鲁棒性提升 15%（针对光照变化、叶片遮挡场景）。
+3. 实验数据集：四类棉花病害数据集
+3.1 数据集概况
+本研究基于四类棉花病害识别数据集，包含棉花常见病害与健康状态，数据集需联系作者获取或后续更新至公开存储平台：
+数据集名称	包含类别	图像总数	图像分辨率	数据分布（训练：验证：测试）
+四类棉花数据集	褐斑病（Brown spot）、黄姜病（Verticilium wilt）、枯萎病（Fusarium wilt）+ 健康叶片（Healthy）	8000+	统一 resize 至 384×384（适配 ViT 输入）	7:1:2（通过代码自动划分）
+3.2 数据集获取与结构
+3.2.1 下载方式
+当前数据集暂未公开，如需使用请联系作者获取；公开后将更新百度网盘链接及提取码。
+3.2.2 文件夹组织（解压后放置于项目根目录，结构如下）
+plaintext
+cotton_disease_dataset/  
+├── brown_spot/           # 棉花褐斑病叶片图像  
+├── verticilium_wilt/     # 棉花黄姜病叶片图像  
+├── fusarium_wilt/        # 棉花枯萎病叶片图像  
+└── healthy/              # 健康棉花叶片图像  
+4. 实验环境配置
+4.1 依赖安装
+推荐使用 Anaconda 创建虚拟环境，确保 PyTorch 版本与 CUDA 环境匹配（支持 GPU/CPU，优先推荐 GPU 加速）：
+bash
 # 1. 创建并激活虚拟环境  
-conda create -n tssc-tf python=3.10  
-conda activate tssc-tf  
+conda create -n vitkab-pytorch python=3.10  
+conda activate vitkab-pytorch  
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-# 2. 安装TensorFlow（支持GPU/CPU，示例为GPU版本）  
-pip install Tensorflow-gpu1.14.0
-pip install Keras2.2.4. 
-=======
-# 2. 安装TensorFlow（支持GPU/CPU，示例为CPU版本）  
-pip install tensorflow==2.15.0  
->>>>>>> Stashed changes
-=======
-# 2. 安装TensorFlow（支持GPU/CPU，示例为CPU版本）  
-pip install tensorflow==2.15.0  
->>>>>>> Stashed changes
-=======
-# 2. 安装TensorFlow（支持GPU/CPU，示例为CPU版本）  
-pip install tensorflow==2.15.0  
->>>>>>> Stashed changes
+# 2. 安装PyTorch 2.4.1（GPU版本，需CUDA 12.1；CPU版本见下方备注）  
+conda install torch==2.4.1 torchvision==0.19.1 torchaudio==2.4.1 pytorch-cuda=12.1 -c pytorch -c nvidia  
+
+# （备注：CPU版本安装命令）  
+# pip install torch==2.4.1 torchvision==0.19.1 torchaudio==2.4.1 --index-url https://download.pytorch.org/whl/cpu  
 
 # 3. 安装其他依赖库  
-pip install numpy~=2.0.2 matplotlib~=3.9.4 opencv-python~=4.12.0.88  
-pip install pandas~=2.3.1 pillow~=11.2.1 scikit-learn~=1.5.1  
-pip install tqdm~=4.67.1 tensorboard~=2.15.1  
-```  
-
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-## 5 代码使用说明  
-=======
-## 5. 代码使用说明  
->>>>>>> Stashed changes
-=======
-## 5. 代码使用说明  
->>>>>>> Stashed changes
-=======
-## 5. 代码使用说明  
->>>>>>> Stashed changes
-
-### 5.1 模型训练  
-
-运行`train.py`脚本启动训练，支持通过参数调整训练配置，示例命令：  
-
-```bash  
+pip install numpy~=2.0.1 matplotlib~=3.9.5 opencv-python~=4.12.0.88  
+pip install pandas~=2.3.2 pillow~=11.3.0 scikit-learn~=1.5.2  
+pip install tqdm~=4.66.5 tensorboard~=2.17.0 torchmetrics~=1.4.0  
+5. 代码使用说明
+5.1 模型训练
+运行train.py脚本启动训练，支持通过命令行参数调整训练配置，示例命令如下：
+bash
 python train.py \  
-  --data_dir ./pea_disease_dataset \  # 数据集根目录（解压后的路径）  
-  --epochs 60 \  
-  --batch_size 16 \  
-  --lr 1e-4 \  
-  --weight_decay 1e-5 \  
-  --save_dir ./weights \  
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-  --log_interval 10  # 每10个batch打印一次训练日志  
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-```  
-
-
-#### 关键参数说明：  
-
-| 参数名 | 含义 | 默认值 |
-|-----------------|---------------------------------------|-----------------|
-| `--data_dir` | 数据集根目录路径 | `./pea_disease_dataset` |
-| `--epochs` | 训练轮数 | 60 |
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-| `--batch_size` | 批次大小（根据显存调整，8/16/32） | 16 |
-=======
-| `--batch_size` | 批次大小（根据GPU显存调整，8/16/32） | 16 |
->>>>>>> Stashed changes
-=======
-| `--batch_size` | 批次大小（根据GPU显存调整，8/16/32） | 16 |
->>>>>>> Stashed changes
-| `--lr` | 初始学习率 | 1e-4 |
-| `--save_dir` | 训练权重保存目录（.h5格式） | `./weights` |
-| `--device` | 训练设备（`GPU`或`CPU`） | `GPU` |  
-
-
-#### 训练输出：  
-
-- 训练过程中，模型会自动保存**验证集宏平均F1值最高**的权重至`--save_dir`目录，文件名为`best_tssc.h5`；  
-- 训练日志（损失值、准确率、F1值）通过TensorBoard可视化，可通过`tensorboard --logdir=./logs`查看。  
-<<<<<<< Updated upstream
-
-### 5.2 模型预测  
-
-使用训练好的权重进行单张豌豆叶片图像预测，运行`predict.py`脚本，示例命令：  
-
-```bash  
+  --data_dir ./cotton_disease_dataset \  # 数据集根目录（解压后的路径）  
+  --epochs 80 \                          # 训练轮数  
+  --batch_size 32 \                      # 批次大小（根据GPU显存调整，16/32/64）  
+  --lr 5e-5 \                            # 初始学习率  
+  --weight_decay 1e-5 \                  # 权重衰减（防止过拟合）  
+  --save_dir ./weights \                 # 模型权重保存目录（.pth格式）  
+  --log_interval 20 \                    # 每20个batch打印一次训练日志  
+  --device GPU                           # 训练设备（GPU/CPU）  
+关键参数说明
+参数名	含义	默认值
+--data_dir	数据集根目录路径	./cotton_disease_dataset
+--epochs	训练轮数	80
+--batch_size	批次大小（GPU 显存不足时可设为 16）	32
+--lr	初始学习率（采用余弦退火学习率调度）	5e-5
+--save_dir	权重保存目录（自动生成，.pth 格式）	./weights
+--device	训练设备（GPU 需配置 CUDA 12.1+）	GPU
+5.2 模型预测
+使用训练好的权重进行单张棉花叶片图像预测，运行predict.py脚本，示例命令如下：
+bash
 python predict.py \  
-  --image_path ./examples/pea_powdery_mildew.jpg \  # 输入图像路径  
-  --weight_path ./weights/best_tssc.h5 \  # 预训练权重路径（TensorFlow .h5格式）  
-  --device GPU  
-```  
-
-=======
-| `--batch_size` | 批次大小（根据GPU显存调整，8/16/32） | 16 |
-| `--lr` | 初始学习率 | 1e-4 |
-| `--save_dir` | 训练权重保存目录（.h5格式） | `./weights` |
-| `--device` | 训练设备（`GPU`或`CPU`） | `GPU` |  
->>>>>>> Stashed changes
-
-#### 预测输出示例：  
-
-<<<<<<< Updated upstream
-```  
-输入图像路径：./examples/pea_powdery_mildew.jpg  
-预测类别：白粉病（Powdery mildew）  
-置信度：0.9976  
-```  
-
-### 5.2 模型预测  
-
-<<<<<<< Updated upstream
-## 6. 项目文件结构  
-
-```  
-tssc-for-pea-disease-identification/  
-├── pea_disease_dataset/  # 五类豌豆病害数据集（需从百度网盘下载）  
-├── examples/             # 预测示例图像（如powdery_mildew_example.jpg）  
-├── models/                 #整体模型实现
-│   ├── se_module.py          # SE注意力机制实现  
-│   ├── split_attention.py    # 分裂注意力机制实现  
-│   ├── three_neighbor_attention.py  # 三邻域通道注意力机制实现  
-│   ├──  TSSC.py               # TSSC主模型（整合上述注意力模块）  
-├── dataset/              # 数据处理文件夹  
-│   ├── data_loader.py    # 数据集加载与预处理（自动划分训练/验证/测试集）  
-├── train.py              # 模型训练脚本（TensorFlow版）  
-├── predict.py            # 模型预测脚本（TensorFlow版）    
-├── weights/              # 模型权重保存目录（自动生成）  
-└── README.md             # 项目说明文档（本文档）  
-```  
-
-
-## 7. 已知问题与注意事项  
-
-1. **框架适配**：本项目仅支持TensorFlow 2.10+版本，不兼容PyTorch环境；  
-2. **输入尺寸**：模型固定输入为400×400×3，预测时会自动resize输入图像，建议原始图像分辨率≥400×400以保留细节；  
-3. **数据集扩展**：如需新增病害类别，需补充对应图像数据并修改`TSSC.py`中输出层的`num_classes`参数。  
-
-=======
-#### 训练输出：  
-
-- 训练过程中，模型会自动保存**验证集宏平均F1值最高**的权重至`--save_dir`目录，文件名为`best_tssc.h5`；  
-- 训练日志（损失值、准确率、F1值）通过TensorBoard可视化，可通过`tensorboard --logdir=./logs`查看。  
-
-
-### 5.2 模型预测  
-
-使用训练好的权重进行单张豌豆叶片图像预测，运行`predict.py`脚本，示例命令：  
-
-```bash  
-python predict.py \  
-  --image_path ./examples/pea_powdery_mildew.jpg \  # 输入图像路径  
-  --weight_path ./weights/best_tssc.h5 \  # 预训练权重路径（TensorFlow .h5格式）  
-```  
-
-
-#### 预测输出示例：  
-
-```  
-输入图像路径：./examples/pea_powdery_mildew.jpg  
-预测类别：白粉病（Powdery mildew）  
-置信度：0.9976  
-```  
->>>>>>> Stashed changes
-
-## 8. 引用与联系方式  
-
-<<<<<<< Updated upstream
-### 8.1 引用方式  
-=======
-=======
-使用训练好的权重进行单张豌豆叶片图像预测，运行`predict.py`脚本，示例命令：  
-
-```bash  
-python predict.py \  
-  --image_path ./examples/pea_powdery_mildew.jpg \  # 输入图像路径  
-  --weight_path ./weights/best_tssc.h5 \  # 预训练权重路径（TensorFlow .h5格式）  
-```  
-
-
-#### 预测输出示例：  
-
-```  
-输入图像路径：./examples/pea_powdery_mildew.jpg  
-预测类别：白粉病（Powdery mildew）  
-置信度：0.9976  
-```  
-
-
->>>>>>> Stashed changes
-=======
-
-
-### 5.2 模型预测  
-
-使用训练好的权重进行单张豌豆叶片图像预测，运行`predict.py`脚本，示例命令：  
-
-```bash  
-python predict.py \  
-  --image_path ./examples/pea_powdery_mildew.jpg \  # 输入图像路径  
-  --weight_path ./weights/best_tssc.h5 \  # 预训练权重路径（TensorFlow .h5格式）  
-```  
-
-
-#### 预测输出示例：  
-
-```  
-输入图像路径：./examples/pea_powdery_mildew.jpg  
-预测类别：白粉病（Powdery mildew）  
-置信度：0.9976  
-```  
-
-
->>>>>>> Stashed changes
-## 6. 项目文件结构  
-
-```
-tssc-for-pea-disease-identification/
-├── pea_disease_dataset/  # 五类豌豆病害数据集（需从百度网盘下载）
-├── examples/             # 预测示例图像（如rust_example.png）
-├── models/               # 模型定义文件夹
-│   ├── Tssc.py           # TSSC核心代码（含特征交互、尺度建模模块）
-│   ├── se_module.py      # 实现 Squeeze-and-Excitation 注意力机制
-│   ├── split_attention.py    # 实现split注意力机制
-│   ├── three_neighbor_attention.py   # 实现三邻域通道注意力机制
-├── dataset/              # 数据处理文件夹
-│   ├── data_loader.py    # 数据集加载与预处理（自动划分训练/验证/测试集）
-├── train.py              # 模型训练脚本
-├── predict.py            # 模型预测脚本
-└── README.md             # 项目说明文档（本文档）
-```  
-
-
-## 8. 已知问题与注意事项  
-
-1. **框架适配**：本项目仅支持TensorFlow 2.10+版本，不兼容PyTorch环境；  
-2. **输入尺寸**：模型固定输入为400×400×3，预测时会自动resize输入图像，建议原始图像分辨率≥400×400以保留细节；   
-3. **数据集扩展**：如需新增病害类别，需补充对应图像数据并修改`TSSC.py`中输出层的`num_classes`参数。  
-
-
-## 9. 引用与联系方式  
-
-### 9.1 引用方式  
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-
-论文处于投刊阶段，正式发表后将更新BibTeX引用格式，当前可临时引用：  
-
-```bibtex  
-@article{tssc_pea_disease,  
-  title={TSSC: A New Deep Learning Model for Accurate Pea Leaf Disease Identification},  
+  --image_path ./examples/cotton_brown_spot.jpg \  # 输入图像路径  
+  --weight_path ./weights/best_vitkab.pth \         # 预训练权重路径（PyTorch .pth格式）  
+  --device CPU                                      # 预测设备（GPU/CPU）  
+预测输出示例
+plaintext
+输入图像路径：./examples/cotton_brown_spot.jpg  
+预测类别：褐斑病（Brown spot）  
+置信度：0.9982  
+预测耗时：12.3ms（CPU）/ 2.1ms（GPU）  
+6. 项目文件结构
+plaintext
+vitkab-for-cotton-leaf-disease-identification/  
+├── cotton_disease_dataset/  # 四类棉花病害数据集（需联系作者获取）  
+├── examples/                # 预测示例图像（如cotton_brown_spot.jpg）  
+├── models/                  # 模型核心模块实现  
+│   ├── vit_improve.py       # 改进Vision Transformer实现（精简编码器+混合注意力）  
+│   ├── kan_module.py        # Kolmogorov-Arnold Networks（KAN）非线性表征模块  
+│   ├── biformer_attention.py# BiFormer稀疏动态注意力模块实现  
+│   └── ViTKAB.py            # ViTKAB主模型（整合上述三大核心模块）  
+├── dataset/                 # 数据处理文件夹  
+│   └── data_loader.py       # 数据集加载、预处理与划分（自动生成训练/验证/测试集）  
+├── train.py                 # 模型训练脚本（PyTorch版，含学习率调度、早停机制）  
+├── predict.py               # 模型预测脚本（PyTorch版，支持单图预测与置信度输出）  
+├── weights/                 # 模型权重保存目录（训练时自动生成）  
+└── README.md                # 项目说明文档（本文档）  
+7. 已知问题与注意事项
+框架适配：本项目仅支持 PyTorch 2.4.1 及以上版本，不兼容 TensorFlow 或低版本 PyTorch（<2.0）；
+输入尺寸：模型固定输入为 384×384×3（RGB 图像），预测时会自动 resize 输入图像，建议原始图像分辨率≥384×384，避免低分辨率导致的特征丢失；
+数据集扩展：如需新增棉花病害类别，需补充对应类别图像数据，并修改models/ViTKAB.py中num_classes参数（当前为 4，新增后需同步调整）；
+GPU 依赖：训练时推荐使用 CUDA 12.1 及以上版本 GPU（显存≥8GB），CPU 训练耗时较长（单轮 epoch 约 120 分钟，GPU 约 15 分钟）；
+权重格式：模型权重仅支持 PyTorch 的.pth格式，不兼容 TensorFlow 的.h5格式，请勿混用跨框架权重。
+8. 引用与联系方式
+8.1 引用方式
+论文处于投刊阶段，正式发表后将更新完整 BibTeX 引用格式，当前可临时引用：
+bibtex
+@article{vitkab_cotton_disease,  
+  title={ViTKAB: An Efficient Deep Learning Network for Cotton Leaf Disease Identification},  
   author={[作者姓名，待发表时补充]},  
   journal={[期刊名称，待录用后补充]},  
-  year={2024},  
+  year={2025},  
   note={Manuscript submitted for publication}  
 }  
-```  
-
-
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-### 8.2 联系方式  
-
-若遇到代码运行问题或学术交流需求，请联系：  
-- 邮箱：changyibu@huuc.edu.cn  
-- GitHub Issue：直接在本仓库提交Issue，会在1-3个工作日内回复。
-=======
-### 9.2 联系方式  
-
-若遇到代码运行问题或学术交流需求，请联系：  
-- 邮箱：changyibu@huuc.edu.cn  
-- GitHub Issue：直接在本仓库提交Issue，会在1-3个工作日内回复。
->>>>>>> Stashed changes
-=======
-### 9.2 联系方式  
-
-若遇到代码运行问题或学术交流需求，请联系：  
-- 邮箱：changyibu@huuc.edu.cn  
-- GitHub Issue：直接在本仓库提交Issue，会在1-3个工作日内回复。
->>>>>>> Stashed changes
-=======
-### 9.2 联系方式  
-
-若遇到代码运行问题或学术交流需求，请联系：  
-- 邮箱：changyibu@huuc.edu.cn  
-- GitHub Issue：直接在本仓库提交Issue，会在1-3个工作日内回复。
->>>>>>> Stashed changes
+8.2 联系方式
+若遇到代码运行问题、数据集获取需求或学术交流，可通过以下方式联系：
+邮箱：vitkab_cotton@xxx.edu.cn（替换为实际邮箱）
+GitHub Issue：直接在本仓库提交 Issue，会在 1-3 个工作日内回复；
+学术交流：可发送主题为 “ViTKAB - 学术交流” 的邮件，附个人简介及交流方向，将优先回复
